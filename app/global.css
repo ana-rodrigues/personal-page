@@ -1,150 +1,186 @@
-@import 'tailwindcss';
-
-::selection {
-  background-color: #47a3f3;
-  color: #fefefe;
-}
-
 :root {
-  --sh-class: #2d5e9d;
-  --sh-identifier: #354150;
-  --sh-sign: #8996a3;
-  --sh-string: #007f7a;
-  --sh-keyword: #e02518;
-  --sh-comment: #a19595;
-  --sh-jsxliterals: #6266d1;
-  --sh-property: #e25a1c;
-  --sh-entity: #e25a1c;
+  --gray-00: #ffffff;
+  --gray-100: #fbfbfb;
+  --gray-200: #e9e9e7;
+  --gray-300: #adada1;
+  --gray-400: #6f6f5e;
+  --gray-500: #535345;
+  --gray-700: #25251d;
+  --gray-800: #161616;
+
+  --purple-lightest: #f0effb;
+  --purple-light: #d8cdfa;
+  --purple-medium: #6a42ee;
+  --purple-darkest: #2e0754;
+
+  --orange-lightest: #faeee9;
+  --orange-light: #f6d1bf;
+  --orange-medium: #f17131;
+  --orange-darkest: #4a1e05;
+
+  --font-family-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-family-mono: var(--font-departure-mono), ui-monospace, monospace;
+
+  --space-xs: 0.125rem; /* 2px  */
+  --space-s: 0.25rem; /* 4px  */
+  --space-m: 0.5rem; /* 8px  */
+  --space-l: 1rem; /* 16px */
+  --space-xl: 2rem; /* 32px */
+
+  --container-narrow: 40rem; /* 640px (assuming root font-size is 16px) */
+  --container-wide: 100%;
+
+  --background: var(--gray-00);
+  --border: var(--gray-200);
+
+  --text-xs: 0.6875rem; /* 11px */
+  --text-sm: 0.75rem; /* 12px */
+  --text-base: 0.875rem; /* 14px */
+  --text-lg: 1rem; /* 16px */
+  --text-xl: 1.25rem; /* 20px */
+  --text-2xl: 1.5rem; /* 24px */
+  --text-3xl: 2rem; /* 32px */
+
+  --font-normal: 450;
+  --font-medium: 600;
+
+  --leading-tight: 1.45;
+  --leading-relaxed: 1.6;
+
+  --text-primary: var(--gray-800);
+  --text-secondary: var(--gray-400);
+  --text-muted: var(--gray-300);
+
+  --accent-weak: var(--orange-lightest);
+  --accent-soft: var(--orange-light);
+  --accent: var(--orange-medium);
+  --accent-strong: var(--orange-darkest);
+
+  color-scheme: light;
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
-    --sh-class: #4c97f8;
-    --sh-identifier: white;
-    --sh-keyword: #f47067;
-    --sh-string: #0fa295;
+  :root:not([data-theme='light']) {
+    --accent-weak: var(--purple-lightest);
+    --accent-soft: var(--purple-light);
+    --accent: var(--purple-medium);
+    --accent-strong: var(--purple-darkest);
   }
-  html {
-    color-scheme: dark;
-  }
+}
+
+:root[data-theme='dark'] {
+  --accent-weak: var(--purple-lightest);
+  --accent-soft: var(--purple-light);
+  --accent: var(--purple-medium);
+  --accent-strong: var(--purple-darkest);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
 }
 
 html {
-  min-width: 360px;
+  -webkit-text-size-adjust: 100%;
 }
 
-.prose .anchor {
-  @apply absolute invisible no-underline;
-
-  margin-left: -1em;
-  padding-right: 0.5em;
-  width: 80%;
-  max-width: 700px;
-  cursor: pointer;
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-family-sans);
+  line-height: var(--leading-relaxed);
+  -webkit-font-smoothing: antialiased;
+  margin: auto 0 0;
 }
 
-.anchor:hover {
-  @apply visible;
+main {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-l);
+  padding: var(--space-l);
+  max-width: var(--container-narrow);
+  margin: 0 auto;
 }
 
-.prose a {
-  @apply underline transition-all decoration-neutral-400 dark:decoration-neutral-600 underline-offset-2 decoration-[0.1em];
-}
-
-.prose .anchor:after {
-  @apply text-neutral-300 dark:text-neutral-700;
-  content: '#';
-}
-
-.prose *:hover > .anchor {
-  @apply visible;
-}
-
-.prose pre {
-  @apply bg-neutral-50 dark:bg-neutral-900 rounded-lg overflow-x-auto border border-neutral-200 dark:border-neutral-900 py-2 px-3 text-sm;
-}
-
-.prose code {
-  @apply px-1 py-0.5 rounded-lg;
-}
-
-.prose pre code {
-  @apply p-0;
-  border: initial;
-  line-height: 1.5;
-}
-
-.prose code span {
-  @apply font-medium;
-}
-
-.prose img {
-  /* Don't apply styles to next/image */
-  @apply m-0;
-}
-
-.prose p {
-  @apply my-4 text-neutral-800 dark:text-neutral-200;
-}
-
-.prose h1 {
-  @apply text-4xl font-medium tracking-tight mt-6 mb-2;
-}
-
-.prose h2 {
-  @apply text-xl font-medium tracking-tight mt-6 mb-2;
-}
-
-.prose h3 {
-  @apply text-xl font-medium tracking-tight mt-6 mb-2;
-}
-
-.prose h4 {
-  @apply text-lg font-medium tracking-tight mt-6 mb-2;
-}
-
-.prose strong {
-  @apply font-medium;
-}
-
-.prose ul {
-  @apply list-disc pl-6;
-}
-
-.prose ol {
-  @apply list-decimal pl-6;
-}
-
-.prose > :first-child {
-  /* Override removing top margin, causing layout shift */
-  margin-top: 1.25em !important;
-  margin-bottom: 1.25em !important;
-}
-
-pre::-webkit-scrollbar {
-  display: none;
-}
-
-pre {
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none; /* Firefox */
-}
-
-/* Remove Safari input shadow on mobile */
-input[type='text'],
-input[type='email'] {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-}
-
-table {
+img,
+picture,
+video,
+canvas,
+svg {
   display: block;
-  max-width: fit-content;
-  overflow-x: auto;
-  white-space: nowrap;
+  max-width: 100%;
 }
 
-.title {
-  text-wrap: balance;
+input,
+button,
+textarea,
+select {
+  font: inherit;
 }
+
+ul,
+ol {
+  list-style: none;
+  padding: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.assistive {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+.text-xs { font-size: var(--text-xs); }
+.text-sm { font-size: var(--text-sm); }
+.text-base { font-size: var(--text-base); }
+.text-lg { font-size: var(--text-lg); }
+.text-xl { font-size: var(--text-xl); }
+.text-2xl { font-size: var(--text-2xl); }
+.text-3xl { font-size: var(--text-3xl); }
+
+.font-normal { font-weight: var(--font-normal); }
+.font-medium { font-weight: var(--font-medium); }
+
+.text-primary { color: var(--text-primary); }
+.text-secondary { color: var(--text-secondary); }
+.text-muted { color: var(--text-muted); }
+
+.label {
+  font-family: var(--font-family-mono);
+  font-size: var(--text-sm);
+  font-weight: var(--font-normal);
+  text-transform: uppercase;
+  line-height: var(--leading-tight);
+}
+
+.body-regular {
+  font-family: var(--font-family-sans);
+  font-size: var(--text-base);
+  font-weight: var(--font-normal);
+  line-height: var(--leading-relaxed);
+}
+
+.caption {
+  font-family: var(--font-family-sans);
+  font-size: var(--text-sm);
+  font-weight: var(--font-normal);
+  line-height: var(--leading-tight);
+}
+
