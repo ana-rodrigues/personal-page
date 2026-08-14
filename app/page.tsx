@@ -1,3 +1,4 @@
+import Footer from './components/Footer/Footer';
 import Hero from './components/Hero/Hero';
 
 export default function Page() {
@@ -7,6 +8,7 @@ export default function Page() {
         A. Rodrigues, Digital Product Designer based in Lisbon
       </h1>
       <Hero/>
+      <Footer/>
     </>
   )
 }
