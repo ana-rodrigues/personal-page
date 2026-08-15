@@ -1,0 +1,37 @@
+{
+  "title": "Roles & Selected Projects",
+  "roles": [
+    {
+      "company": "Mollie",
+      "role": "Product Designer",
+      "period": "2025 - Today"
+    },
+    {
+      "company": "Navro",
+      "role": "Product Designer",
+      "period": "2023 - 2025"
+    },
+    {
+      "company": "Swell",
+      "role": "Product Manager",
+      "period": "2022"
+    },
+    {
+      "company": "Gaspard+Bruno",
+      "role": "Product Designer, Lead",
+      "period": "2018 - 2022",
+      "projects": [
+        { "client": "Public" },
+        { "client": "Save Your Wardrobe" },
+        { "client": "Off-White" },
+        { "client": "Browns Fashion" },
+        { "client": "Thom Browne" }
+      ]
+    },
+    {
+      "company": "Goodbarber",
+      "role": "Customer Care Assistant",
+      "period": "2016 - 2017"
+    }
+  ]
+}

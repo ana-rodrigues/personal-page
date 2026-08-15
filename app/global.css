@@ -7,6 +7,7 @@
   --gray-500: #535345;
   --gray-700: #25251d;
   --gray-800: #161616;
+  --gray-900: #090909;
 
   --purple-lightest: #f0effb;
   --purple-light: #d8cdfa;
@@ -30,26 +31,33 @@
   --container-narrow: 40rem; /* 640px (assuming root font-size is 16px) */
   --container-wide: 100%;
 
-  --background: var(--gray-00);
+  --background: var(--gray-100);
   --border: var(--gray-200);
 
   --text-xs: 0.6875rem; /* 11px */
-  --text-sm: 0.75rem; /* 12px */
+  --text-s: 0.75rem; /* 12px */
   --text-base: 0.875rem; /* 14px */
-  --text-lg: 1rem; /* 16px */
+  --text-l: 1rem; /* 16px */
   --text-xl: 1.25rem; /* 20px */
   --text-2xl: 1.5rem; /* 24px */
   --text-3xl: 2rem; /* 32px */
 
-  --font-normal: 450;
-  --font-medium: 600;
+  --font-normal: 475;
+  --font-medium: 550;
 
   --leading-tight: 1.45;
   --leading-relaxed: 1.6;
 
-  --text-primary: var(--gray-800);
-  --text-secondary: var(--gray-400);
+  --text-highlight: var(--gray-900);
+  --text-primary: var(--gray-400);
+  --text-secondary: var(--gray-300);
   --text-muted: var(--gray-300);
+  --text-accent: var(--accent);
+
+  --transition-hover-property: color;
+  --transition-hover-duration: 0.2s;
+  --transition-hover-timing: ease-in-out;
+  --transition-hover: var(--transition-hover-property) var(--transition-hover-duration) var(--transition-hover-timing);
 
   --accent-weak: var(--orange-lightest);
   --accent-soft: var(--orange-light);
@@ -160,11 +168,13 @@ a {
 
 .text-primary { color: var(--text-primary); }
 .text-secondary { color: var(--text-secondary); }
+.text-highlight { color: var(--text-highlight); }
 .text-muted { color: var(--text-muted); }
+
 
 .label {
   font-family: var(--font-family-mono);
-  font-size: var(--text-sm);
+  font-size: var(--text-s);
   font-weight: var(--font-normal);
   text-transform: uppercase;
   line-height: var(--leading-tight);
@@ -175,11 +185,20 @@ a {
   font-size: var(--text-base);
   font-weight: var(--font-normal);
   line-height: var(--leading-relaxed);
+  letter-spacing: -0.1;
+}
+
+.body-medium {
+  font-family: var(--font-family-sans);
+  font-size: var(--text-base);
+  font-weight: var(--font-medium);
+  line-height: var(--leading-relaxed);
+  letter-spacing: -0.1;
 }
 
 .caption {
   font-family: var(--font-family-sans);
-  font-size: var(--text-sm);
+  font-size: var(--text-s);
   font-weight: var(--font-normal);
   line-height: var(--leading-tight);
 }

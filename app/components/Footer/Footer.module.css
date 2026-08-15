@@ -1,3 +1,12 @@
 .root {
-  /* Footer styles */
+  position: relative;
+  width: 100%;
+  height: 50svh;
+  overflow: hidden;
+  background: var(--gray-100);
+}
+
+.canvas canvas {
+  display: block;
+  image-rendering: pixelated;
 }

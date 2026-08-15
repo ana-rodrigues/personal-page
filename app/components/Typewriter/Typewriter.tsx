@@ -1,7 +1,7 @@
 'use client';
 
 import type { ElementType, ReactElement, ReactNode } from 'react';
-import { cloneElement, isValidElement, useEffect, useState } from 'react';
+import { cloneElement, createElement, isValidElement, useEffect, useState } from 'react';
 import { Cursor, useTypewriter } from 'react-simple-typewriter';
 import styles from './Typewriter.module.css';
 
@@ -87,9 +87,9 @@ export default function Typewriter({
     );
   }
 
-  return (
-    <Component className={[styles.root, className].join(' ')}>
-      {content}
-    </Component>
+  return createElement(
+    Component,
+    { className: [styles.root, className].join(' ') },
+    content,
   );
 }

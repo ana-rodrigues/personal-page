@@ -1,17 +1,17 @@
-import type { ElementType, HTMLAttributes, ReactNode } from 'react';
+import { createElement, type ElementType, type HTMLAttributes, type ReactNode } from 'react';
 
 type TextProps = HTMLAttributes<HTMLElement> & {
   as?: ElementType;
   children?: ReactNode;
   className?: string;
   typography?: 'label' | 'body' | 'caption';
-  color?: 'primary' | 'secondary' | 'muted';
+  color?: 'primary' | 'secondary' | 'highlight';
 };
 
 const colorMap = {
   primary: 'text-primary',
   secondary: 'text-secondary',
-  muted: 'text-muted',
+  highlight: 'text-highlight'
 };
 
 const typographyMap = {
@@ -28,16 +28,12 @@ export default function Text({
   color = 'primary',
   ...props
 }: TextProps) {
-  return (
-    <Component
-      className={[
-        typographyMap[typography],
-        colorMap[color],
-        className,
-      ].join(' ')}
-      {...props}
-    >
-      {children}
-    </Component>
+  return createElement(
+    Component,
+    {
+      className: [typographyMap[typography], colorMap[color], className].join(' '),
+      ...props,
+    },
+    children,
   );
 }
