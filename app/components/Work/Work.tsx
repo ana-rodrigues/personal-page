@@ -12,7 +12,7 @@ export default function Work() {
   return <div id="work" className={styles.root}>
 
     <Text as="h2" typography="label" color="highlight" className={styles.heading}>
-      <Typewriter words={[workData.title]} loop={false}/>
+      {workData.title}
     </Text>
 
     <ul className={styles.workList}>

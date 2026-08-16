@@ -6,6 +6,7 @@ import { baseUrl } from './sitemap'
 import { Inter } from 'next/font/google'
 import localFont from 'next/font/local'
 import Footer from './components/Footer/Footer'
+import PreFooter from './components/PreFooter/PreFooter'
 import DevThemeToggle from './components/DevThemeToggle/DevThemeToggle'
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter', display: 'swap' })
@@ -62,6 +63,7 @@ export default function RootLayout({
           <Analytics />
           <SpeedInsights />
         </main>
+        <PreFooter />
         <Footer />
         <DevThemeToggle />
       </body>

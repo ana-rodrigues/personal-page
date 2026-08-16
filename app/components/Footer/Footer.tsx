@@ -92,8 +92,8 @@ function usePalette(): RGB[] {
 }
 
 function buildGrid(viewportWidth: number, viewportHeight: number) {
-  const cols = Math.max(1, Math.floor(viewportWidth / SPACING));
-  const rows = Math.max(1, Math.floor(viewportHeight / SPACING));
+  const cols = Math.max(1, Math.floor(viewportWidth / SPACING) + 2);
+  const rows = Math.max(1, Math.floor(viewportHeight / SPACING) + 2);
   const total = Math.min(cols * rows, MAX_POINTS);
   const stride = Math.max(1, Math.ceil((cols * rows) / total));
 

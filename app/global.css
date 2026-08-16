@@ -15,9 +15,9 @@
   --purple-darkest: #2e0754;
 
   --orange-lightest: #faeee9;
-  --orange-light: #f6d1bf;
-  --orange-medium: #f17131;
-  --orange-darkest: #4a1e05;
+  --orange-light: #f6cbbf;
+  --orange-medium: #ea3e13;
+  --orange-darkest: #4b1204;
 
   --font-family-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
   --font-family-mono: var(--font-departure-mono), ui-monospace, monospace;
@@ -110,6 +110,17 @@ body {
   line-height: var(--leading-relaxed);
   -webkit-font-smoothing: antialiased;
   margin: auto 0 0;
+  transition: background-color 1s ease;
+}
+
+body.prefooter-visible {
+  background: var(--gray-200);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body {
+    transition: none;
+  }
 }
 
 main {
