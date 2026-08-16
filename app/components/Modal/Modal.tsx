@@ -5,7 +5,7 @@ import { createPortal } from 'react-dom';
 import styles from './Modal.module.css';
 import Button from '../Button/Button';
 
-const EXIT_DURATION = 300;
+const EXIT_DURATION = 550;
 
 type ModalProps = {
   open: boolean;
@@ -16,11 +16,14 @@ type ModalProps = {
 export default function Modal({ open, onClose, children }: ModalProps) {
   const [rendered, setRendered] = useState(open);
 
+  // Mount synchronously in the same commit as `open` flipping true, instead of
+  // via an effect (which would skip a paint with the modal missing entirely).
+  if (open && !rendered) {
+    setRendered(true);
+  }
+
   useEffect(() => {
-    if (open) {
-      setRendered(true);
-      return;
-    }
+    if (open) return;
     const timer = setTimeout(() => setRendered(false), EXIT_DURATION);
     return () => clearTimeout(timer);
   }, [open]);
@@ -50,7 +53,7 @@ export default function Modal({ open, onClose, children }: ModalProps) {
       onClick={onClose}
     >
       <div className={styles.panel} onClick={(event) => event.stopPropagation()} role="dialog" aria-modal="true">
-        <Button variant="primary" onClick={onClose} aria-label="Close">
+        <Button  className="closeButton" variant="primary" onClick={onClose} aria-label="Close">
           [x] Close
         </Button>
         {children}

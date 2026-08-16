@@ -177,6 +177,12 @@ a {
 .text-muted { color: var(--text-muted); }
 
 
+h1 {
+  font-family: monospace;
+  font-size: var(--text-3xl);
+  color: red;
+}
+
 .label {
   font-family: var(--font-family-mono);
   font-size: var(--text-s);
@@ -185,7 +191,7 @@ a {
   line-height: var(--leading-tight);
 }
 
-.body-regular {
+.body-regular, .mdx-p, .mdx-li {
   font-family: var(--font-family-sans);
   font-size: var(--text-base);
   font-weight: var(--font-normal);
@@ -201,10 +207,66 @@ a {
   letter-spacing: -0.1;
 }
 
+.mdx-h2, .mdx-h3 {
+  font-family: var(--font-family-sans);
+  font-size: var(--text-base);
+  font-weight: var(--font-medium);
+  line-height: var(--leading-relaxed);
+  color: var(--text-highlight);
+  letter-spacing: -0.1;
+  margin-top: var(--space-l);
+}
+
 .caption {
   font-family: var(--font-family-sans);
   font-size: var(--text-s);
   font-weight: var(--font-normal);
   line-height: var(--leading-tight);
+}
+
+.mdx-ul,
+.mdx-ol {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-s);
+  padding-left: var(--space-l);
+}
+
+.mdx-ul {
+  list-style: disc;
+}
+
+.mdx-ol {
+  list-style: decimal;
+}
+
+.mdx-strong {
+  font-weight: var(--font-medium);
+  color: var(--text-highlight);
+}
+
+.mdx-media {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.tableContainer {
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.thead .th {
+display: none;
+}
+
+.td {
+  font-size: var(--text-base);
+  color: var(--text-primary);
+  padding: var(--space-m) 0;
+  border-bottom: 1px solid var(--border);
 }
 

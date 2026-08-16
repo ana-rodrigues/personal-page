@@ -1,0 +1,137 @@
+.root {
+  padding: var(--space-l);
+}
+
+.heading {
+  display: block;
+  padding-bottom: var(--space-l);
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-m);
+}
+
+.item {
+  width: 100%;
+}
+
+.itemButton {
+  display: flex;
+  align-items: top;
+  gap: var(--space-l);
+  width: 100%;
+  padding: var(--space-xs);
+  border: 0;
+  background: none;
+  text-align: left;
+  cursor: pointer;
+  border-radius: 12px;
+  transition: var(--transition-hover);
+}
+
+.itemImageWrap {
+  flex-shrink: 0;
+  display: block;
+  width: 40%;
+  aspect-ratio: 1 / 1;
+  position: relative;
+  background: var(--gray-100);
+}
+
+.itemImageFrame {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  border-radius: 8px;
+  background: var(--gray-100);
+  will-change: transform;
+}
+
+.itemImage {
+  display: block;
+  width: calc(100% + 2px);
+  height: calc(100% + 2px);
+  margin: -1px;
+  object-fit: cover;
+  background: var(--gray-100);
+}
+
+.itemContent {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.itemLabel {
+  display: flex;
+  align-items: center;
+  gap: var(--space-m);
+}
+
+.itemSummary {
+  display: block;
+}
+
+.caseStudy {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-l);
+}
+
+.caseStudyCoverWrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 5 / 4;
+}
+
+.caseStudyCoverFrame {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  border-radius: 8px;
+  background: var(--gray-100);
+  will-change: transform;
+}
+
+.caseStudyCoverImg {
+  display: block;
+  width: calc(100% + 2px);
+  height: calc(100% + 2px);
+  margin: -1px;
+  object-fit: cover;
+}
+
+.caseStudyBody {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-l);
+}
+
+.caseStudyTitle {
+  display: block;
+  font-size: var(--text-xl);
+  text-transform: uppercase;
+}
+
+.caseStudySummary {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  padding-left: var(--space-m);
+  border-left: 1px solid var(--border);
+}
+
+.mdxContent {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-m);
+  color: var(--text-primary);
+  /* Article body is long and off-screen at open time; keep it from competing
+     with the layout/opacity animation for main-thread work. */
+  content-visibility: auto;
+  contain-intrinsic-size: auto 800px;
+}

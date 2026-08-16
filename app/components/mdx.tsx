@@ -48,6 +48,22 @@ function RoundedImage(props) {
   return <Image alt={props.alt} className="rounded-lg" {...props} />
 }
 
+function CustomImage({ src, alt }: { src: string; alt?: string }) {
+  if (src.endsWith('.mp4')) {
+    return <video className="mdx-media" src={src} autoPlay loop muted playsInline />
+  }
+
+  return <img className="mdx-media" src={src} alt={alt || ''} />
+}
+
+function Paragraph(props) {
+  return <p className="mdx-p" {...props} />
+}
+
+function Strong(props) {
+  return <strong className="mdx-strong" {...props} />
+}
+
 function Code({ children, ...props }) {
   let codeHTML = highlight(children)
   return <code dangerouslySetInnerHTML={{ __html: codeHTML }} {...props} />
@@ -69,7 +85,7 @@ function createHeading(level) {
     let slug = slugify(children)
     return React.createElement(
       `h${level}`,
-      { id: slug },
+      { id: slug, className: 'mdx-h2' },
       [
         React.createElement('a', {
           href: `#${slug}`,
@@ -94,8 +110,11 @@ let components = {
   h5: createHeading(5),
   h6: createHeading(6),
   Image: RoundedImage,
+  CustomImage,
   a: CustomLink,
   code: Code,
+  p: Paragraph,
+  strong: Strong,
   Table,
 }
 
