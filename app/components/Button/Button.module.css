@@ -1,0 +1,31 @@
+.root {
+  font-family: monospace;
+  font-size: var(--text-sm);
+  text-transform: uppercase;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-s) var(--space-m);
+  background: var(--background);
+  color: var(--text-highlight);
+  border: 1px solid var(--text-primary);
+  cursor: pointer;
+  transform: var(--transition-hover);
+}
+
+.buttonPrimary {
+  composes: root;
+}
+
+.buttonPrimary:hover {
+  background: var(--gray-200);
+  transform: var(--transition-hover);
+}
+
+.buttonSecondary {
+  composes: root;
+}
+
+.buttonPrimary:active, .buttonSecondary:active {
+  transform: var(--transition-press);
+}

@@ -1,0 +1,40 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  opacity: 0;
+  backdrop-filter: blur(0);
+  transition:
+    opacity 200ms ease,
+    backdrop-filter 200ms ease 100ms;
+}
+
+.overlay.isOpen {
+  pointer-events: auto;
+  opacity: 1;
+  background: color-mix(in srgb, var(--background) 95%, transparent);
+  backdrop-filter: blur(32px) saturate(1.2);
+  transition:
+  opacity 150ms ease-out 100ms,
+  backdrop-filter 150ms ease-out;
+}
+
+@starting-style {
+  .overlay.isOpen {
+    opacity: 0;
+    backdrop-filter: blur(0);
+  }
+}
+
+.panel {
+  position: relative;
+  z-index: 1;
+  width: var(--container-narrow);
+  min-height: 100svh;
+  overflow-y: auto;
+  padding: var(--space-l);
+}

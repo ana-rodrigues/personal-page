@@ -59,6 +59,11 @@
   --transition-hover-timing: ease-in-out;
   --transition-hover: var(--transition-hover-property) var(--transition-hover-duration) var(--transition-hover-timing);
 
+  --transition-press-property: scale;
+  --transition-press-duration: 0.1s;
+  --transition-press-timing: ease-in-out;
+  --transition-press: var(--transition-press-property) var(--transition-press-duration) var(--transition-press-timing);
+
   --accent-weak: var(--orange-lightest);
   --accent-soft: var(--orange-light);
   --accent: var(--orange-medium);
