@@ -52,6 +52,7 @@
   --text-primary: var(--gray-400);
   --text-secondary: var(--gray-300);
   --text-muted: var(--gray-300);
+  --text-inverse: var(--gray-00);
   --text-accent: var(--accent);
 
   --transition-hover-property: color;
@@ -174,6 +175,7 @@ a {
 .text-primary { color: var(--text-primary); }
 .text-secondary { color: var(--text-secondary); }
 .text-highlight { color: var(--text-highlight); }
+.text-inverse { color: var(--text-inverse); }
 .text-muted { color: var(--text-muted); }
 
 

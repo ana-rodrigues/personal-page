@@ -5,13 +5,14 @@ type TextProps = HTMLAttributes<HTMLElement> & {
   children?: ReactNode;
   className?: string;
   typography?: 'label' | 'body' | 'caption';
-  color?: 'primary' | 'secondary' | 'highlight';
+  color?: 'primary' | 'secondary' | 'highlight' | 'inverse';
 };
 
 const colorMap = {
   primary: 'text-primary',
   secondary: 'text-secondary',
-  highlight: 'text-highlight'
+  highlight: 'text-highlight',
+  inverse: 'text-inverse'
 };
 
 const typographyMap = {
