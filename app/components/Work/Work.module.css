@@ -50,8 +50,15 @@
   transition: var(--transition-hover);
 }
 
-.workItem:is(:hover, .workItemOpen) .workItemRow::before {
+.workItem:is(:hover) .workItemRow::before {
   content: "→";
+  color: var(--text-highlight);
+  will-change: transform;
+  animation: workMarker 0.2s ease-out forwards;
+}
+
+.workItem:is(.workItemOpen) .workItemRow::before {
+  content: "↱";
   color: var(--text-highlight);
   will-change: transform;
   animation: workMarker 0.2s ease-out forwards;

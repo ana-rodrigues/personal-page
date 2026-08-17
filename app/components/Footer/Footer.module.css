@@ -8,7 +8,7 @@
 .canvas canvas {
   display: block;
   image-rendering: pixelated;
-  height: 60svh;
+  height: 40svh;
 }
 
 .prefooter {

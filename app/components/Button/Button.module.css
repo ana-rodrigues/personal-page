@@ -29,3 +29,20 @@
 .buttonPrimary:active, .buttonSecondary:active {
   transform: var(--transition-press);
 }
+
+.buttonGhost {
+  composes: root;
+  padding: 0;
+  background: none;
+  border: none;
+  transition: color 0.2s ease-in-out;
+}
+
+.buttonGhost:hover {
+  background: none;
+  color: var(--text-primary);
+}
+
+.buttonGhost:active {
+  transform: var(--transition-press);
+}

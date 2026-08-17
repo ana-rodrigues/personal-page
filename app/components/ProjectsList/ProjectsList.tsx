@@ -20,7 +20,7 @@ type ProjectsListProps = {
   posts: ProjectListCard[];
 };
 
-const imageTransition = { type: 'spring' as const, duration: 0.35, bounce: 0.25 };
+const imageTransition = { type: 'spring' as const, duration: 0.45, bounce: 0.15 };
 
 export default function ProjectsList({ posts }: ProjectsListProps) {
   const [selectedSlug, setSelectedSlug] = useState<string | null>(null);
@@ -56,14 +56,14 @@ export default function ProjectsList({ posts }: ProjectsListProps) {
             </span>
             <span className={styles.itemContent}>
               <span className={styles.itemLabel}>
-                <Text as="span" typography="label" color="highlight">
+                <Text as="span" typography="label" color="primary">
                   []
                 </Text>
-                <Text as="span" typography="body" color="highlight">
+                <Text as="span" typography="body" color="primary">
                   {post.company}
                 </Text>
               </span>
-              <Text as="span" typography="body" color="primary" className={styles.itemSummary}>
+              <Text as="span" typography="body" color="secondary" className={styles.itemSummary}>
                 {post.summary}
               </Text>
             </span>
@@ -78,8 +78,33 @@ export default function ProjectsList({ posts }: ProjectsListProps) {
           <motion.div
             key={selectedPost.slug}
             className={styles.caseStudy}
-            exit={{ opacity: 0, transition: { duration: 0.2, delay: 0.3 } }}
+            exit={{ opacity: 0, transition: { duration: 0.18, delay: 0.15 } }}
           >
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              animate={{
+                opacity: 1,
+                y: 0,
+                transition: {
+                  delay: 0.12,
+                  opacity: { duration: 0.28, ease: 'easeOut' },
+                  y: { type: 'spring', duration: 0.4, bounce: 0.12 },
+                },
+              }}
+              exit={{ opacity: 0, transition: { duration: 0.15 } }}
+              className={styles.caseStudyHeader}
+            >
+              <Text as="h1" typography="label" color="highlight" className={styles.caseStudyTitle}>
+                {selectedPost.title}
+              </Text>
+
+              <div className={styles.caseStudySummary}>
+                <Text as="p" typography="body" color="primary">
+                  {selectedPost.summary}
+                </Text>
+              </div>
+            </motion.div>
+
             <div className={styles.caseStudyCoverWrap}>
               {selectedPost.image && (
                 <motion.div
@@ -98,26 +123,9 @@ export default function ProjectsList({ posts }: ProjectsListProps) {
               )}
             </div>
 
-            <motion.div
-              initial={{ opacity: 0, y: 8 }}
-              animate={{ opacity: 1, y: 0, transition: { delay: 0.2, duration: 0.2, ease: 'easeOut' } }}
-              exit={{ opacity: 0 }}
-              className={styles.caseStudyBody}
-            >
-              <Text as="h1" typography="label" color="highlight" className={styles.caseStudyTitle}>
-                {selectedPost.title}
-              </Text>
-
-              <div className={styles.caseStudySummary}>
-                <Text as="p" typography="body" color="primary">
-                  {selectedPost.summary}
-                </Text>
-              </div>
-
-              <article className={styles.mdxContent}>
-                {selectedPost.content}
-              </article>
-            </motion.div>
+            <article className={styles.mdxContent}>
+              {selectedPost.content}
+            </article>
           </motion.div>
         )}
       </AnimatePresence>

@@ -84,7 +84,13 @@
 .caseStudyCoverWrap {
   position: relative;
   width: 100%;
-  aspect-ratio: 5 / 4;
+  height: min(70svh, 32rem);
+}
+
+@media (max-width: 480px) {
+  .caseStudyCoverWrap {
+    height: 45svh;
+  }
 }
 
 .caseStudyCoverFrame {
@@ -103,7 +109,7 @@
   object-fit: cover;
 }
 
-.caseStudyBody {
+.caseStudyHeader {
   display: flex;
   flex-direction: column;
   gap: var(--space-l);
@@ -111,8 +117,10 @@
 
 .caseStudyTitle {
   display: block;
-  font-size: var(--text-xl);
+  font-size: var(--text-4xl);
   text-transform: uppercase;
+  color: var(--text-highlight);
+  margin-top: var(--space-l);
 }
 
 .caseStudySummary {
@@ -120,7 +128,8 @@
   flex-direction: column;
   gap: var(--space-xs);
   padding-left: var(--space-m);
-  border-left: 1px solid var(--border);
+  border-left: 2px solid var(--border);
+  margin-bottom: var(--space-l);
 }
 
 .mdxContent {
@@ -128,8 +137,6 @@
   flex-direction: column;
   gap: var(--space-m);
   color: var(--text-primary);
-  /* Article body is long and off-screen at open time; keep it from competing
-     with the layout/opacity animation for main-thread work. */
   content-visibility: auto;
   contain-intrinsic-size: auto 800px;
 }

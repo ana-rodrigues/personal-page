@@ -6,12 +6,13 @@ type ButtonProps = {
   children?: ReactNode;
   onClick?: () => void;
   className?: string;
-  variant?: 'primary' | 'secondary';
+  variant?: 'primary' | 'secondary' | 'ghost';
 };
 
 const variantMap = {
   primary: styles.buttonPrimary,
   secondary: styles.buttonSecondary,
+  ghost: styles.buttonGhost,
 };
 
 
