@@ -10,7 +10,7 @@
 .list {
   display: flex;
   flex-direction: column;
-  gap: var(--space-m);
+  gap: var(--space-l);
 }
 
 .item {
@@ -27,7 +27,7 @@
   background: none;
   text-align: left;
   cursor: pointer;
-  border-radius: 12px;
+  border-radius: 20px;
   transition: var(--transition-hover);
 }
 
@@ -44,7 +44,7 @@
   position: absolute;
   inset: 0;
   overflow: hidden;
-  border-radius: 8px;
+  border-radius: 20px;
   background: var(--gray-100);
   will-change: transform;
 }
@@ -53,7 +53,6 @@
   display: block;
   width: calc(100% + 2px);
   height: calc(100% + 2px);
-  margin: -1px;
   object-fit: cover;
   background: var(--gray-100);
 }
@@ -92,7 +91,7 @@
   position: absolute;
   inset: 0;
   overflow: hidden;
-  border-radius: 8px;
+  border-radius: 20px;
   background: var(--gray-100);
   will-change: transform;
 }
@@ -101,7 +100,6 @@
   display: block;
   width: calc(100% + 2px);
   height: calc(100% + 2px);
-  margin: -1px;
   object-fit: cover;
 }
 

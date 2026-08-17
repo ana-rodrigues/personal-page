@@ -1,6 +1,6 @@
 :root {
   --gray-00: #ffffff;
-  --gray-100: #fbfbfb;
+  --gray-100: #fdfbfb;
   --gray-200: #e9e9e7;
   --gray-300: #adada1;
   --gray-400: #6f6f5e;
@@ -45,8 +45,8 @@
   --font-normal: 475;
   --font-medium: 550;
 
-  --leading-tight: 1.45;
-  --leading-relaxed: 1.6;
+  --leading-tight: 1.3;
+  --leading-relaxed: 1.5;
 
   --text-highlight: var(--gray-900);
   --text-primary: var(--gray-400);
@@ -110,24 +110,13 @@ body {
   line-height: var(--leading-relaxed);
   -webkit-font-smoothing: antialiased;
   margin: auto 0 0;
-  transition: background-color 1s ease;
-}
-
-body.prefooter-visible {
-  background: var(--gray-200);
-}
-
-@media (prefers-reduced-motion: reduce) {
-  body {
-    transition: none;
-  }
+  padding: var(--space-l);
 }
 
 main {
   display: flex;
   flex-direction: column;
   gap: var(--space-l);
-  padding: var(--space-l);
   max-width: var(--container-narrow);
   margin: 0 auto;
 }

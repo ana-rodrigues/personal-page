@@ -5,6 +5,7 @@ import { Canvas, useFrame, useThree } from '@react-three/fiber';
 import type { BufferAttribute as BufferAttributeType } from 'three';
 import { createNoise3D } from 'simplex-noise';
 import styles from './Footer.module.css';
+import CardStack from '../CardStack/CardStack';
 
 const SPACING = 0.2;
 const POINT_SIZE = 0.40;
@@ -131,7 +132,7 @@ function bandFor(noiseValue: number, palette: RGB[]) {
   const normalized = (noiseValue + 1) / 2;
   const weights = PALETTE_WEIGHTS.length === palette.length
     ? PALETTE_WEIGHTS
-    : palette.map(() => 1 / palette.length); 
+    : palette.map(() => 1 / palette.length);
 
   let cumulative = 0;
   for (let i = 0; i < palette.length; i++) {
@@ -194,22 +195,24 @@ export default function Footer() {
   const reducedMotion = usePrefersReducedMotion();
   const palette = usePalette();
 
-  if (reducedMotion) {
-    return <div className={styles.root} />;
-  }
-
   return (
-    <div className={styles.root}>
-      <Canvas
-        className={styles.canvas}
-        camera={{ fov: 75, near: 0.1, far: 1000, position: [0, 0, 6.45] }}
-        dpr={[1, 2]}
-        gl={{ antialias: false }}
-        frameloop="demand"
-        flat
-      >
-        <PixelGrid palette={palette} />
-      </Canvas>
+    <>
+      <div className={styles.root}>
+        <div>
+        {!reducedMotion && (
+          <Canvas
+            className={styles.canvas}
+            camera={{ fov: 75, near: 0.1, far: 1000, position: [0, 0, 6.45] }}
+            dpr={[1, 2]}
+            gl={{ antialias: false }}
+            frameloop="demand"
+            flat
+          >
+            <PixelGrid palette={palette} />
+          </Canvas>
+        )}
+      </div>
     </div>
+    </>
   );
 }

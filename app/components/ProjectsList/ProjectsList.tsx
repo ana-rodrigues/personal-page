@@ -29,10 +29,10 @@ export default function ProjectsList({ posts }: ProjectsListProps) {
   const shouldReduceMotion = useReducedMotion();
 
   return <LayoutGroup>
-    <div id="projects-list" className={styles.root}>
+    <div id="projects" className={styles.root}>
 
     <Text as="h2" typography="label" color="highlight" className={styles.heading}>
-      <Typewriter words={['Projects (list)']} loop={false}/>
+      Selected projects
     </Text>
 
     <ul className={styles.list}>

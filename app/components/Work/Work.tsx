@@ -35,11 +35,11 @@ export default function Work() {
           {'description' in project && (
             <div className={`${styles.description}${active === index ? ` ${styles.descriptionOpen}` : ''}`}>
               <div className={styles.descriptionBody}>
-<Text as="p" typography="body" color="secondary" className={styles.descriptionText}>
+              <Text as="p" typography="body" color="secondary" className={styles.descriptionText}>
                     {project.description.split('\n').map((line, i) => (
                       <span key={i}>{line}</span>
                     ))}
-                  </Text>
+              </Text>
               </div>
             </div>
           )}
