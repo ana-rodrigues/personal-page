@@ -13,18 +13,6 @@ category: 'case studies'
 logo: /media/navro-logo.png
 ---
 
-<h2 className="mdx-h2">Business impact</h2>
-
-Introducing a file mapper utility allows Navro to perform CSV-based batch payments at scale by reducing the manual labour of preparing every payment instruction file. With this feature, the company is able to:
-
-<ul className="mdx-ul">
-  <li className="mdx-li">Reduce the operational cost of manually preparing payment instruction files on behalf of clients</li>
-  <li className="mdx-li">Improve straight-through processing rates by reducing the chance of human error</li>
-  <li className="mdx-li">Increase client and beneficiary satisfaction by reducing the chance of payment delays</li>
-  <li className="mdx-li">Increase team satisfaction by removing the need to repetitive manual work</li>
-</ul>
-
-
 <h2 className="mdx-h2">Context</h2>
 
 In today's global economy, enterprise organisations still depend on periodic CSV batch payments to distribute payroll and pension schemes across multiple geographies. Despite the proliferation of API-first solutions, CSV format remains central to the finance space - it is compatible with most human resources (HR), enterprise resource planning (ERP), and other systems used in the industry. 
@@ -43,45 +31,22 @@ When clients upload payment instructions in CSV form - hundreds or thousands of 
 
 Despite CSV's pervasive use, its simplicity is deceptive, since cross-system uniformity is rare; import processes must account for file irregularities and complex mappings in large files, which is typical in enterprise settings.
 
-<h3 className="mdx-h3">Low scalability</h3>
-
 While Navro already offered a solution for batch payments, it was not without its own operational and scale challenges: the work required to translate the CSV file into a compatible format remained manual at first. 
 
-In an attempt to shield clients from the operational complexity, we offered file preparation as part of our services. This provided our team an attempt to master edge cases before automating the process further. While useful to discovery, this approach was not scalable.
+**Low scalability** In an attempt to shield clients from the operational complexity, we offered file preparation as part of our services. This provided our team an attempt to master edge cases before automating the process further. While useful to discovery, this approach was not scalable.
 
-<h3 className="mdx-h3">Processing delays</h3>
+**Processing delays** Scale challenges hit hardest in mission-critical flows like payroll and pension schemes, where schedules can be both a blessing and a curse - while dates and volumes are mostly predictable, any delays can result in strained client relationships.
 
-Scale challenges hit hardest in mission-critical flows like payroll and pension schemes, where schedules can be both a blessing and a curse - while dates and volumes are mostly predictable, any delays can result in strained client relationships.
-
-<div className="tableContainer">
-  <table className="table">
-    <thead className="thead">
-      <tr className="tr">
-        <th className="th">Challenges</th>
-      </tr>
-    </thead>
-    <tbody className="tbody">
-      <tr className="tr">
-        <td className="td">CSV files exported from other platforms often diverge in delimiters, column headers, value formatting, or encoding, often leading to a cascade of issues during upload.</td>
-      </tr>
-      <tr className="tr">
-        <td className="td">Banking and compliance screening partners demand very specific values and formats for incoming payment instructions.</td>
-      </tr>
-      <tr className="tr">
-        <td className="td">Onboarding a client to use batch upload could take multiple days, depending on the size and responsiveness of clients to resolve missing or incorrect data. This timeline becomes shorter in subsequent payment runs, once beneficiary data is validated for the specific corridor to be used.</td>
-      </tr>
-      <tr className="tr">
-        <td className="td">The existing manual process is not compatible to running payment operations at scale.</td>
-      </tr>
-      <tr className="tr">
-        <td className="td">Any delays in time-sensitive payments can impact client satisfaction and result in strained commercial relationships.</td>
-      </tr>
-    </tbody>
-  </table>
-</div>
+<ul className="mdx-ul">
+  <li className="mdx-li">CSV files exported from other platforms often diverge in delimiters, column headers, value formatting, or encoding, often leading to a cascade of issues during upload.</li>
+  <li className="mdx-li">Banking and compliance screening partners demand very specific values and formats for incoming payment instructions.</li>
+  <li className="mdx-li">Onboarding a client to use batch upload could take multiple days, depending on the size and responsiveness of clients to resolve missing or incorrect data. This timeline becomes shorter in subsequent payment runs, once beneficiary data is validated for the specific corridor to be used.</li>
+  <li className="mdx-li">The existing manual process is not compatible to running payment operations at scale.</li>
+  <li className="mdx-li">Any delays in time-sensitive payments can impact client satisfaction and result in strained commercial relationships.</li>
+</ul>
 
 
-<h2 className="mdx-h2">Role and team</h2>
+<h2 className="mdx-h2">Role</h2>
 
 This project was developed within a cross-functional team of one Product Manager, two Frontend Developers, one Backend Developer, one QA Engineer, and myself as Product Designer. I was responsible for:
 
@@ -98,42 +63,29 @@ This project was developed within a cross-functional team of one Product Manager
 
 <h2 className="mdx-h2">Discovery and exploration</h2>
 
-<h3 className="mdx-h3">Collecting client feedback </h3>
-
-With the support of the Customer Success team, we collected and synthesised client feedback, segmented into two groups:
+**Collecting client feedback** With the support of the Customer Success team, we collected and synthesised client feedback, segmented into two groups:
 
 <ol className="mdx-ol">
   <li className="mdx-li"><strong className="mdx-strong">Self-served clients</strong> reported high levels of frustration creating a file that can be accepted by the system as valid payment instructions. One client reported that a single member of their organisation mastered batch file upload and noted that payment operations were significantly impacted during their annual leave.</li>
-</ol>
 
-<ol className="mdx-ol">
   <li className="mdx-li"><strong className="mdx-strong">Serviced clients</strong> reported frustration with operational delays; the broad majority of the reported delays were caused by client unresponsiveness providing missing data.  </li>
-</ol>
 
-<ol className="mdx-ol">
   <li className="mdx-li"><strong className="mdx-strong">Internal operational teams</strong> suddenly became data entry clerks, spending hours every month supporting clients with file upload. This process could take from hours to days and would prevent us from scaling effectively.</li>
 </ol>
 
+**Focus groups and co-creation** We held an internal focus group with members of the Payment Operations team, which gave us deeper insights about our existing bottlenecks and client relationships.
 
-<h3 className="mdx-h3">Focus groups and co-creation</h3>
 
-We held an internal focus group with members of the Payment Operations team, which gave us deeper insights about our existing bottlenecks and client relationships.
- 
-
-<h3 className="mdx-h3">AI-assisted experimentation</h3>
-
-The team decided to explore the potential of AI-assisted experiments. We ran an all-hands workshop where the cross-functional team collaborated in prototypes that were later used in user testing and stakeholder alignment.
+**AI-assisted experimentation** The team decided to explore the potential of AI-assisted experiments. We ran an all-hands workshop where the cross-functional team collaborated in prototypes that were later used in user testing and stakeholder alignment.
 
 The session outcomes proved us that these augmentation tools can elevate team collaboration, driving clarity and confidence over a feature.
 
-<CustomImage src="/media/case-studies/navro-3.png" alt="Early hand-drawn wireframes" />
+<CustomImage src="/media/navro-3.png" alt="Early hand-drawn wireframes" />
  
-<CustomImage src="/media/case-studies/navro-4.mp4" alt="Recording of code prototype" />
+<CustomImage src="/media/navro-4.mp4" alt="Recording of code prototype" />
  
 
 <h2 className="mdx-h2">Solution</h2>
-
-<h3 className="mdx-h3">File mapping utility</h3>
 
 This utility offers users a graphical interface to configure new mappings. Once mapped, future files can be uploaded and ingested by the system with no structure-related errors.
 
@@ -141,41 +93,33 @@ This journey posed multiple UX challenges, given the complexity of the different
 
 <ol className="mdx-ol">
   <li className="mdx-li"><strong className="mdx-strong">File contains all required data, yet columns contain unexpected labels</strong> our utility will make an initial attempt to map the file using a label resemblance algorithm (for English); if no suitable matches are found, the user must manually intervene.</li>
-</ol>
 
-<ol className="mdx-ol">
   <li className="mdx-li"><strong className="mdx-strong">File contains data beyond the minimum required</strong> once all required fields are mapped to columns, the user can review and save the mapping. The system will ignore all unnecessary data.</li>
-</ol>
 
-<ol className="mdx-ol">
   <li className="mdx-li"><strong className="mdx-strong">File contains insufficient data to map to all required fields</strong> the user is advised to add columns to their mapping, which can be auto-filled in case content is predictable (e.g., transaction fees, purpose of payment, value date). The template can be downloaded and provided to clients.</li>
 </ol>
 
-<CustomImage src="/media/case-studies/navro-5.png" alt="File mapping interface" />
+<CustomImage src="/media/navro-5.png" alt="File mapping interface" />
  
-<CustomImage src="/media/case-studies/navro-6.png" alt="Manually selecting a mapping from the table" />
+<CustomImage src="/media/navro-6.png" alt="Manually selecting a mapping from the table" />
 
-<CustomImage src="/media/case-studies/navro-7.png" alt="Adding column functionality with auto-fill option" />
- 
+<CustomImage src="/media/navro-7.png" alt="Adding column functionality with auto-fill option" />
 
-<h3 className="mdx-h3">Mapping management capabilities</h3>
 
 Managing mappings was set as an internal feature for launch, available through the client management area, at superadmin level.
 
 Permissioned users can create, read, update and delete files on behalf of clients.
 
-<CustomImage src="/media/case-studies/navro-8.png" alt="Mapping management interface" />
+<CustomImage src="/media/navro-8.png" alt="Mapping management interface" />
 
-<CustomImage src="/media/case-studies/navro-9.png" alt="Mapping management options" />
+<CustomImage src="/media/navro-9.png" alt="Mapping management options" />
   
-
-<h3 className="mdx-h3">Mapping usage in file upload</h3>
 
 Any user of the platform can then leverage the power of mappings during file upload. The system will attempt to detect the most suitable template to pre-select for the user, who can then manually override that selection.
 
 If the mapping is suitable, file upload will be successful in a single step. Otherwise, the system will determine the file as incorrectly structured and display an error to the user.
 
-<CustomImage src="/media/case-studies/navro-10.png" alt="File upload interface with mapping auto-detection" />
+<CustomImage src="/media/navro-10.png" alt="File upload interface with mapping auto-detection" />
 
 <h2 className="mdx-h2">Results</h2>
 
@@ -186,5 +130,3 @@ The feature was received positively by internal users who are using it in its be
 Beyond addressing immediate operational bottlenecks, this feature lays the groundwork for a fully streamlined payment file ingestion pipeline, including validation, enrichment and faster recovery routes. 
 
 It marks a strategic step toward minimising manual intervention and operational overhead, while meeting the industry's growing demand for accuracy, compliance, and true straight-through processing at scale for cross-border payments.
-
-<CustomImage src="/media/case-studies/navro-11.png" alt="" />

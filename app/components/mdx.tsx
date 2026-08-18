@@ -49,11 +49,16 @@ function RoundedImage(props) {
 }
 
 function CustomImage({ src, alt }: { src: string; alt?: string }) {
-  if (src.endsWith('.mp4')) {
-    return <video className="mdx-media" src={src} autoPlay loop muted playsInline />
-  }
+  const media = src.endsWith('.mp4')
+    ? <video className="mdx-media" src={src} autoPlay loop muted playsInline />
+    : <img className="mdx-media" src={src} alt={alt || ''} />
 
-  return <img className="mdx-media" src={src} alt={alt || ''} />
+  return (
+    <figure className="mdx-figure">
+      {media}
+      {alt && <figcaption className="mdx-caption">{alt}</figcaption>}
+    </figure>
+  )
 }
 
 function Paragraph(props) {

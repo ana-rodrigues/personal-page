@@ -27,25 +27,23 @@
   background: none;
   text-align: left;
   cursor: pointer;
-  border-radius: 20px;
   transition: var(--transition-hover);
 }
 
 .itemImageWrap {
   flex-shrink: 0;
   display: block;
-  width: 40%;
+  width: 50%;
   aspect-ratio: 1 / 1;
   position: relative;
-  background: var(--gray-100);
+  background: var(--gray-200);
 }
 
 .itemImageFrame {
   position: absolute;
   inset: 0;
   overflow: hidden;
-  border-radius: 20px;
-  background: var(--gray-100);
+  background: var(--gray-200);
   will-change: transform;
 }
 
@@ -54,7 +52,7 @@
   width: calc(100% + 2px);
   height: calc(100% + 2px);
   object-fit: cover;
-  background: var(--gray-100);
+  background: var(--gray-200);
 }
 
 .itemContent {
@@ -75,6 +73,24 @@
   display: block;
 }
 
+.item:is(:hover, .itemActive) :global(.text-primary) {
+  color: var(--text-highlight);
+  cursor: pointer;
+  transition: var(--transition-hover);
+}
+
+.item:is(:hover, .itemActive) :global(.text-secondary) {
+  color: var(--text-primary);
+  cursor: pointer;
+  transition: var(--transition-hover);
+}
+
+.list:has(.item:is(:hover, .itemActive)) .item:not(:hover, .itemActive) :global(.text-primary),
+.list:has(.item:is(:hover, .itemActive)) .item:not(:hover, .itemActive) :global(.text-secondary) {
+  color: var(--text-muted);
+  transition: var(--transition-hover);
+}
+
 .caseStudy {
   display: flex;
   flex-direction: column;
@@ -85,6 +101,7 @@
   position: relative;
   width: 100%;
   height: min(70svh, 32rem);
+  background: var(--gray-200);
 }
 
 @media (max-width: 480px) {
@@ -97,8 +114,7 @@
   position: absolute;
   inset: 0;
   overflow: hidden;
-  border-radius: 20px;
-  background: var(--gray-100);
+  background: var(--gray-200);
   will-change: transform;
 }
 
@@ -128,7 +144,7 @@
   flex-direction: column;
   gap: var(--space-xs);
   padding-left: var(--space-m);
-  border-left: 2px solid var(--border);
+  border-left: 1px solid var(--border);
   margin-bottom: var(--space-l);
 }
 

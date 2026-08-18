@@ -76,7 +76,7 @@ export default function Modal({ open, onClose, children }: ModalProps) {
         aria-modal="true"
       >
         <Button variant="ghost" className={styles.closeButton} onClick={requestClose}>
-          [ X ] Close
+          [ ESC ] to Close
         </Button>
         {children}
       </div>

@@ -37,7 +37,10 @@ export default function ProjectsList({ posts }: ProjectsListProps) {
 
     <ul className={styles.list}>
       {posts.map((post) => (
-        <li key={post.slug} className={styles.item}>
+        <li
+          key={post.slug}
+          className={`${styles.item}${selectedSlug === post.slug ? ` ${styles.itemActive}` : ''}`}
+        >
           <button
             type="button"
             className={styles.itemButton}
