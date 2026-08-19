@@ -8,6 +8,7 @@ type Metadata = {
   image?: string
   company?: string
   category?: string
+  private?: boolean
 }
 
 function parseFrontmatter(fileContent: string) {
@@ -22,7 +23,11 @@ function parseFrontmatter(fileContent: string) {
     let [key, ...valueArr] = line.split(': ')
     let value = valueArr.join(': ').trim()
     value = value.replace(/^['"](.*)['"]$/, '$1') // Remove quotes
-    metadata[key.trim() as keyof Metadata] = value
+    if (value === 'true' || value === 'false') {
+      metadata[key.trim() as keyof Metadata] = value === 'true'
+    } else {
+      metadata[key.trim() as keyof Metadata] = value
+    }
   })
 
   return { metadata: metadata as Metadata, content }

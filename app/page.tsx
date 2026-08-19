@@ -1,5 +1,6 @@
 import Hero from './components/Hero/Hero';
 import ProjectsList from './components/ProjectsList/ProjectsList';
+import Reveal from './components/Reveal/Reveal';
 import { CustomMDX } from './components/mdx';
 import { getBlogPosts } from './blog/utils';
 
@@ -9,6 +10,7 @@ export default function Page() {
 
   const listPosts = sortedPosts
     .filter((post) => post.metadata.category === 'case studies')
+    .filter((post) => post.metadata.private !== true)
     .map((post) => ({
       slug: post.slug,
       title: post.metadata.title,
@@ -23,8 +25,8 @@ export default function Page() {
       <h1 className="assistive">
         A. Rodrigues, Digital Product Designer based in Lisbon
       </h1>
-      <Hero/>
-      <ProjectsList posts={listPosts}/>
+      <Reveal as="div"><Hero/></Reveal>
+      <Reveal as="div" delay={0.1}><ProjectsList posts={listPosts}/></Reveal>
     </>
   )
 }

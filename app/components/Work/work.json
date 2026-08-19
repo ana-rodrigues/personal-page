@@ -1,0 +1,40 @@
+{
+  "title": "Roles & Assignments",
+  "roles": [
+    {
+      "company": "Mollie",
+      "role": "Product Designer",
+      "period": "2025 - Today",
+      "description": "Mollie offers an all-in-one payments and money management solution serving over 250,000 businesses in Europe.\nI joined as a Product Designer II for Merchant Experience - a domain resposible for product engagement, design system maintenance and governance, and core platform features like notification and workflow services, user management and identity, developer tooling, as well as support experience with both AI and human agents.",
+      "gallery": []
+    },
+    {
+      "company": "Navro",
+      "role": "Product Designer",
+      "period": "2023 - 2025",
+      "description": "Navro simplifies global payments for businesses by offering access to premier payment services worldwide through a single contract and API.\nI joined as the first in-house designer and transitioned the design function from a consultancy model to permanent staff, establishing the foundations, building the team, and influencing the organisation to adopt a user-centric design culture. By working in close collaboration with Product and Engineering leadership, I helped crafting a full payments suite that complies with regulatory requirements across various regions, contributing to the company's growth from pre-seed to securing their Series B investment round.",
+      "gallery": []
+    },
+    {
+      "company": "Swell",
+      "role": "Product Manager",
+      "period": "2022",
+      "description": "Swell is a customizable, API-first e-commerce platform. Its headless architecture offers businesses the flexibility to operate multiple storefronts across various tech stacks.\nI embraced a new challenge as a Product Manager, applying my e-commerce and product design expertise to develop a hosted storefronts solution featuring a no-code builder - a product aiming to unlock the full potential of the SMB customer segment for the business. I also contributed to increased conversions through the optimisation of the product onboarding. During my time at Swell, the company successfully moved from seed stage to closing their Series A round.",
+      "gallery": []
+    },
+    {
+      "company": "Gaspard+Bruno",
+      "role": "Product Designer, Lead",
+      "period": "2018 - 2022",
+      "description": "Gaspard+Bruno was an independent creative company with offices in London and Lisbon, specialising in strategy, design, and engineering.\nI helped shaping their product approach and played a key role in projects for high-profile clients in the e-commerce and fintech industries, helping to lift it from a small studio into a creative powerhouse.\nI worked on projects for Public, 55+, Save Your Wardrobe, and through a long standing collaboration with Farfetch, I contributed with design work for Browns Fashion, Off-White, Ambush, Palm Angels and Thom Browne.",
+      "gallery": []
+    },
+    {
+      "company": "Goodbarber",
+      "role": "Customer Care Assistant",
+      "period": "2016 - 2017",
+      "description": "Goodbarber is a no-code solution for native and web app building and distribution.\nAs a customer care assistant, I provided multilingual product support and documentation for customers across the Portuguese, Brazilian, and US markets. The first line of support at Goodbarber was mostly concerned with customer success, by supporting customers with the creation of their app projects within our no-code interface and later supporting the distribution of native apps in the Apple Developer and Google Play platforms.",
+      "gallery": []
+    }
+  ]
+}

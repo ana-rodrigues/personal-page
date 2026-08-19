@@ -1,21 +1,21 @@
 :root {
   --gray-00: #ffffff;
-  --gray-100: #fafafa;
-  --gray-200: #e7e7e4;
-  --gray-300: #bdbdb1;
-  --gray-400: #909084;
-  --gray-500: #5a5a4d;
-  --gray-700: #25251d;
-  --gray-800: #161616;
-  --gray-900: #090909;
+  --gray-100: #fafaf9;
+  --gray-200: #e4e4e1;
+  --gray-300: #c4c4b9;
+  --gray-400: #93937b;
+  --gray-500: #70705c;
+  --gray-700: #4c4c3e;
+  --gray-800: #2a2a22;
+  --gray-900: #060605;
 
   --purple-lightest: #f0effb;
-  --purple-light: #d8cdfa;
+  --purple-light: #b9a9eb;
   --purple-medium: #6a42ee;
   --purple-darkest: #2e0754;
 
   --orange-lightest: #faeee9;
-  --orange-light: #f6cbbf;
+  --orange-light: #e2a898;
   --orange-medium: #ea3e13;
   --orange-darkest: #4b1204;
 
@@ -28,7 +28,7 @@
   --space-l: 1rem; /* 16px */
   --space-xl: 2rem; /* 32px */
 
-  --container-narrow: 40rem; /* 640px (assuming root font-size is 16px) */
+  --container-narrow: 38rem; /* 640px (assuming root font-size is 16px) */
   --container-wide: 100%;
 
   --background: var(--gray-100);
@@ -117,7 +117,7 @@ body {
 main {
   display: flex;
   flex-direction: column;
-  gap: var(--space-xl);
+  gap: var(--space-l);
   max-width: var(--container-narrow);
   margin: 0 auto;
 }
@@ -182,7 +182,7 @@ a {
 
 h1 {
   font-family: monospace;
-  font-size: var(--text-3xl);
+  font-size: var(--text-2xl);
 }
 
 .label {
@@ -199,6 +199,7 @@ h1 {
   font-weight: var(--font-normal);
   line-height: var(--leading-relaxed);
   letter-spacing: -0.1;
+  margin-bottom: var(--space-s);
 }
 
 .body-medium {

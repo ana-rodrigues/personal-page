@@ -6,6 +6,7 @@ import styles from './ProjectsList.module.css';
 import Text from '../Text/Text';
 import Typewriter from '../Typewriter/Typewriter';
 import Modal from '../Modal/Modal';
+import ScrambleText from '../ScrambleText/ScrambleText';
 
 export type ProjectListCard = {
   slug: string;
@@ -20,10 +21,11 @@ type ProjectsListProps = {
   posts: ProjectListCard[];
 };
 
-const imageTransition = { type: 'spring' as const, duration: 0.45, bounce: 0.15 };
+const imageTransition = { type: 'spring' as const, duration: 0.38, bounce: 0.22 };
 
 export default function ProjectsList({ posts }: ProjectsListProps) {
   const [selectedSlug, setSelectedSlug] = useState<string | null>(null);
+  const [hoveredSlug, setHoveredSlug] = useState<string | null>(null);
   const layoutIdPrefix = useId();
   const selectedPost = posts.find((post) => post.slug === selectedSlug) ?? null;
   const shouldReduceMotion = useReducedMotion();
@@ -45,6 +47,8 @@ export default function ProjectsList({ posts }: ProjectsListProps) {
             type="button"
             className={styles.itemButton}
             onClick={() => setSelectedSlug(post.slug)}
+            onMouseEnter={() => setHoveredSlug(post.slug)}
+            onMouseLeave={() => setHoveredSlug((current) => (current === post.slug ? null : current))}
           >
             <span className={styles.itemImageWrap}>
               {post.image && (
@@ -60,10 +64,9 @@ export default function ProjectsList({ posts }: ProjectsListProps) {
             <span className={styles.itemContent}>
               <span className={styles.itemLabel}>
                 <Text as="span" typography="label" color="primary">
-                  []
-                </Text>
-                <Text as="span" typography="body" color="primary">
-                  {post.company}
+                  <ScrambleText revealBy="letter" active={hoveredSlug === post.slug}>
+                    {`[] ${post.company}`}
+                  </ScrambleText>
                 </Text>
               </span>
               <Text as="span" typography="body" color="secondary" className={styles.itemSummary}>
@@ -83,31 +86,6 @@ export default function ProjectsList({ posts }: ProjectsListProps) {
             className={styles.caseStudy}
             exit={{ opacity: 0, transition: { duration: 0.18, delay: 0.15 } }}
           >
-            <motion.div
-              initial={{ opacity: 0, y: 10 }}
-              animate={{
-                opacity: 1,
-                y: 0,
-                transition: {
-                  delay: 0.12,
-                  opacity: { duration: 0.28, ease: 'easeOut' },
-                  y: { type: 'spring', duration: 0.4, bounce: 0.12 },
-                },
-              }}
-              exit={{ opacity: 0, transition: { duration: 0.15 } }}
-              className={styles.caseStudyHeader}
-            >
-              <Text as="h1" typography="label" color="highlight" className={styles.caseStudyTitle}>
-                {selectedPost.title}
-              </Text>
-
-              <div className={styles.caseStudySummary}>
-                <Text as="p" typography="body" color="primary">
-                  {selectedPost.summary}
-                </Text>
-              </div>
-            </motion.div>
-
             <div className={styles.caseStudyCoverWrap}>
               {selectedPost.image && (
                 <motion.div
@@ -125,6 +103,31 @@ export default function ProjectsList({ posts }: ProjectsListProps) {
                 </motion.div>
               )}
             </div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              animate={{
+                opacity: 1,
+                y: 0,
+                transition: {
+                  delay: 0.12,
+                  opacity: { duration: 0.28, ease: 'easeOut' },
+                  y: { type: 'spring', duration: 0.4, bounce: 0.12 },
+                },
+              }}
+              exit={{ opacity: 0, transition: { duration: 0.15 } }}
+              className={styles.caseStudyHeader}
+            >
+              <Text as="h1" typography="label" color="highlight" className={styles.caseStudyTitle}>
+                <ScrambleText trigger="mount" revealBy='word' delay={120}>{selectedPost.title}</ScrambleText>
+              </Text>
+
+              <div className={styles.caseStudySummary}>
+                <Text as="p" typography="body" color="primary">
+                  {selectedPost.summary}
+                </Text>
+              </div>
+            </motion.div>
 
             <article className={styles.mdxContent}>
               {selectedPost.content}

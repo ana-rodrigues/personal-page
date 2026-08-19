@@ -1,0 +1,14 @@
+.cursor {
+  position: fixed;
+  z-index: 40;
+  pointer-events: none;
+  border-radius: 8px;
+  overflow: hidden;
+  will-change: transform, left, top, width, height;
+  transition: background-color 0.2s ease;
+}
+
+.cursorHidden,
+.cursorHidden * {
+  cursor: none !important;
+}

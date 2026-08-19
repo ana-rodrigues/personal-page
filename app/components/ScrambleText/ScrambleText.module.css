@@ -1,0 +1,29 @@
+.root {
+  display: inline-block;
+}
+
+.interactive {
+  cursor: default;
+  transition: transform 130ms ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .interactive:hover {
+    transform: scale(1.025);
+  }
+}
+
+.interactive:active {
+  transform: scale(0.975);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .interactive {
+    transition: none;
+  }
+
+  .interactive:hover,
+  .interactive:active {
+    transform: none;
+  }
+}
