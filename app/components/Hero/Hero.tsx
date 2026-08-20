@@ -10,7 +10,7 @@ export default function Hero() {
 
     <div className={styles.preHero}>
       <Text typography='label' color="highlight"><ScrambleText trigger='mount'>A. Rodrigues</ScrambleText></Text>
-      <Text typography='label' color="secondary"><ScrambleText trigger='mount'>Digital Product Designer and beyond'</ScrambleText></Text>
+      <Text typography='label' color="secondary"><ScrambleText trigger='mount'>Digital Product Designer and beyond</ScrambleText></Text>
     </div>
 
     <Text typography='body' color="primary">
