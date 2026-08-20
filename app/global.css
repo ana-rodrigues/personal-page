@@ -3,8 +3,8 @@
   --gray-100: #fafaf9;
   --gray-200: #e5e5e0;
   --gray-300: #c4c4b9;
-  --gray-400: #93937b;
-  --gray-500: #70705c;
+  --gray-400: #aaaa92;
+  --gray-500: #72725d;
   --gray-700: #4c4c3e;
   --gray-800: #2a2a22;
   --gray-900: #060605;
@@ -56,7 +56,7 @@
   --leading-tight: 1.3;
   --leading-relaxed: 1.5;
 
-  --text-highlight: var(--gray-900);
+  --text-highlight: var(--gray-800);
   --text-primary: var(--gray-500);
   --text-secondary: var(--gray-400);
   --text-muted: var(--gray-300);

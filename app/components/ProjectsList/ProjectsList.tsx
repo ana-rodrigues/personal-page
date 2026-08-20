@@ -64,12 +64,12 @@ export default function ProjectsList({ posts }: ProjectsListProps) {
             <span className={styles.itemContent}>
               <span className={styles.itemLabel}>
                 <Text as="span" typography="label" color="primary">
-                  <ScrambleText revealBy="letter" active={hoveredSlug === post.slug}>
+                  <ScrambleText revealBy="word" active={hoveredSlug === post.slug}>
                     {`[] ${post.company}`}
                   </ScrambleText>
                 </Text>
               </span>
-              <Text as="span" typography="body" color="secondary" className={styles.itemSummary}>
+              <Text as="span" typography="body" color="primary" className={styles.itemSummary}>
                 {post.summary}
               </Text>
             </span>

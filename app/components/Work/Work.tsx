@@ -36,18 +36,18 @@ export default function Work() {
             >
               <div className={styles.workItemRow}>
                 <div className={styles.workItemLeft}>
-                  <Text as="p" typography="body" color="primary">{project.company}</Text>
-                  <Text as="p" typography="body" color="secondary">{project.role}</Text>
+                  <Text as="p" typography="body" color="secondary">{project.company}</Text>
+                  <Text as="p" typography="body" color="primary">{project.role}</Text>
                 </div>
                 <div className={styles.workItemRight}>
-                  <Text as="p" typography="body" color="primary">{project.period}</Text>
+                  <Text as="p" typography="body" color="secondary">{project.period}</Text>
                 </div>
               </div>
             </button>
 
             <div className={`${styles.description}${isOpen ? ` ${styles.descriptionOpen}` : ''}`}>
               <div className={styles.descriptionBody}>
-                <Text as="p" typography="body" color="secondary" className={styles.descriptionText}>
+                <Text as="p" typography="body" color="primary" className={styles.descriptionText}>
                   {project.description.split('\n').map((line, i) => (
                     <span key={i}>{line}</span>
                   ))}
