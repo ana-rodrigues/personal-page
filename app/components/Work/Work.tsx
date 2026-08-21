@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import styles from './Work.module.css';
 import Text from '../Text/Text';
+import ScrambleText from '../ScrambleText/ScrambleText';
 import workData from './work.json';
 
 type GalleryItem = { image: string; caption: string };
@@ -12,6 +13,7 @@ const roles = workData.roles as Role[];
 
 export default function Work() {
   const [active, setActive] = useState<number | null>(null);
+  const [hovered, setHovered] = useState<number | null>(null);
 
   return <div id="work" className={styles.root}>
     <ul className={styles.workList}>
@@ -32,11 +34,15 @@ export default function Work() {
               type="button"
               className={styles.workButton}
               onClick={() => setActive(active === index ? null : index)}
+              onMouseEnter={() => setHovered(index)}
+              onMouseLeave={() => setHovered((current) => (current === index ? null : current))}
               aria-expanded={isOpen}
             >
               <div className={styles.workItemRow}>
                 <div className={styles.workItemLeft}>
-                  <Text as="p" typography="body" color="secondary">{project.company}</Text>
+                  <Text as="p" typography="label" color="secondary">
+                    <ScrambleText revealBy="letter" active={hovered === index}>{`[] ${project.company}`}</ScrambleText>
+                  </Text>
                   <Text as="p" typography="body" color="primary">{project.role}</Text>
                 </div>
                 <div className={styles.workItemRight}>

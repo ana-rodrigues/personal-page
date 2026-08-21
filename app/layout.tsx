@@ -6,8 +6,9 @@ import { baseUrl } from './sitemap'
 import { Inter } from 'next/font/google'
 import localFont from 'next/font/local'
 import Footer from './components/Footer/Footer'
-import Nav from './components/Nav/Nav'
-import DevThemeToggle from './components/DevThemeToggle/DevThemeToggle'
+import ThemeScript from './components/Theme/ThemeScript'
+import Theme from './components/Theme/Theme'
+import CoordinatesDock from './components/CoordinatesDock/CoordinatesDock'
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter', display: 'swap' })
 
@@ -57,13 +58,17 @@ export default function RootLayout({
       lang="en"
       className={cx(inter.variable, departureMono.variable, 'bg-background text-foreground antialiased')}
     >
+      <head>
+        <ThemeScript />
+      </head>
       <body className="antialiased">
+        <Theme />
+        <CoordinatesDock />
         <Footer>
           {children}
           <Analytics />
           <SpeedInsights />
         </Footer>
-        <DevThemeToggle />
       </body>
     </html>
   )

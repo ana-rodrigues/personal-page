@@ -4,7 +4,6 @@ import { useId, useState, type ReactNode } from 'react';
 import { AnimatePresence, LayoutGroup, motion, useReducedMotion } from 'motion/react';
 import styles from './ProjectsList.module.css';
 import Text from '../Text/Text';
-import Typewriter from '../Typewriter/Typewriter';
 import Modal from '../Modal/Modal';
 import ScrambleText from '../ScrambleText/ScrambleText';
 
@@ -69,7 +68,7 @@ export default function ProjectsList({ posts }: ProjectsListProps) {
                   </ScrambleText>
                 </Text>
               </span>
-              <Text as="span" typography="body" color="secondary" className={styles.itemSummary}>
+              <Text as="span" typography="body" color="primary" className={styles.itemSummary}>
                 {post.summary}
               </Text>
             </span>

@@ -2,8 +2,8 @@
   --gray-00: #ffffff;
   --gray-100: #fbfbfb;
   --gray-200: #ebebe7;
-  --gray-300: #c4c4b9;
-  --gray-400: #aaaa92;
+  --gray-300: #bcbcb2;
+  --gray-400: #969681;
   --gray-500: #72725d;
   --gray-700: #4c4c3e;
   --gray-800: #2a2a22;
@@ -16,7 +16,7 @@
 
   --orange-lightest: #faeee9;
   --orange-light: #e2a898;
-  --orange-medium: #bd320f;
+  --orange-medium: #ef3e11;
   --orange-darkest: #4b1204;
 
   --font-family-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
@@ -31,12 +31,14 @@
   --container-narrow: 38rem;
   --container-wide: 100%;
 
+  --footer-bar-height: 2.75rem;
+
   --background: var(--gray-100);
   --border: var(--gray-200);
 
   --text-xs: 0.6875rem;
   /* 11px */
-  --text-s: 0.75rem;
+  --text-s: 0.78rem;
   /* 12px */
   --text-base: 0.875rem;
   /* 14px */
@@ -124,7 +126,9 @@ main {
   display: block;
   width: 100%;
   padding: var(--space-l) 0;
+  margin-bottom: var(--space-xl);
 }
+
 
 .content {
   position: relative;
@@ -231,6 +235,10 @@ a {
 
 .text-inverse {
   color: var(--text-inverse);
+}
+
+.text-accent {
+  color: var(--text-accent);
 }
 
 .text-muted {

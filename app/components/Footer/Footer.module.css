@@ -1,44 +1,44 @@
 .root {
   position: relative;
-  isolation: isolate;
   width: 100%;
-  overflow-x: clip;
 }
 
-.revealFooter {
+.bar {
   position: sticky;
   bottom: 0;
+  z-index: 10;
+  width: 100%;
+  margin-top: calc(-1 * var(--footer-bar-height));
+}
+
+.bar::before {
+  content: '';
+  position: absolute;
+  top: -2rem;
+  right: 0;
+  bottom: 0;
+  left: 0;
   z-index: -1;
-  width: 100%;
-  overflow-x: clip;
+  pointer-events: none;
 }
 
-.footerFade {
-  width: 100%;
-  background: var(--gray-100);
-  color: var(--gray-900);
-}
 
-.footerScale {
-  width: 100%;
-}
-
-.footerInner {
+.barInner {
   box-sizing: border-box;
   width: 100%;
-  max-width: var(--container-narrow);
-  margin: 0 auto;
-  padding: var(--space-xl);
+  min-height: var(--footer-bar-height);
+  padding: var(--space-m) var(--space-l);
   display: flex;
-  flex-direction: column;
-  justify-content: space-around;
+  align-items: center;
   gap: var(--space-l);
 }
 
 .timeRow {
+  flex: 1 0 0;
   display: flex;
   align-items: center;
-  gap: var(--space-s);
+  gap: var(--space-m);
+  min-width: 0;
 }
 
 .timeIcon {
@@ -46,31 +46,11 @@
   height: 16px;
 }
 
-.credits :global(a) {
-  text-decoration: none;
-}
-
-.credits :global(a):hover {
-  color: var(--gray-400);
-}
-
 .links {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-m);
-}
-
-.linkRow {
+  flex: 1 0 0;
   display: flex;
   align-items: center;
-  gap: var(--space-m);
-  text-decoration: none;
-}
-
-.linkRow:hover {
-  color: var(--gray-400);
-}
-
-.bracket {
-  letter-spacing: -0.06px;
+  justify-content: flex-end;
+  gap: var(--space-l);
+  min-width: 0;
 }
