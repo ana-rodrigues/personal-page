@@ -1,6 +1,6 @@
 'use client';
 
-// TEMPORARY — for locally testing theme-reactive components (e.g. Footer's
+// TEMPORARY — for locally testing theme-reactive components (e.g. PixelNoise's
 // palette). Not wired into any design, no styling polish. Remove this file
 // and its import in app/layout.tsx once testing is done.
 

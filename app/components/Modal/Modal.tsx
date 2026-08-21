@@ -18,8 +18,6 @@ export default function Modal({ open, onClose, children }: ModalProps) {
   const [rendered, setRendered] = useState(open);
   const panelRef = useRef<HTMLDivElement>(null);
 
-  // Mount synchronously in the same commit as `open` flipping true, instead of
-  // via an effect (which would skip a paint with the modal missing entirely).
   if (open && !rendered) {
     setRendered(true);
   }
@@ -30,10 +28,6 @@ export default function Modal({ open, onClose, children }: ModalProps) {
     return () => clearTimeout(timer);
   }, [open]);
 
-  // Closing while scrolled would otherwise make the shared layoutId image
-  // FLIP-animate all the way from its scrolled-away position back to its
-  // origin. Snap the scroll back to top first so it's measured at its
-  // canonical position, same as a close from an unscrolled panel.
   const requestClose = () => {
     const panel = panelRef.current;
     if (panel && panel.scrollTop > 0) {
@@ -76,7 +70,7 @@ export default function Modal({ open, onClose, children }: ModalProps) {
         aria-modal="true"
       >
         <Button variant="ghost" className={styles.closeButton} onClick={requestClose}>
-          [ ESC ] to Close
+          Close <span className="buttonHint">esc</span>
         </Button>
         {children}
       </div>

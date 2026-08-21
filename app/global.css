@@ -1,7 +1,7 @@
 :root {
   --gray-00: #ffffff;
-  --gray-100: #fafaf9;
-  --gray-200: #e5e5e0;
+  --gray-100: #fbfbfb;
+  --gray-200: #ebebe7;
   --gray-300: #c4c4b9;
   --gray-400: #aaaa92;
   --gray-500: #72725d;
@@ -50,7 +50,7 @@
   /* 32px */
   --text-4xl: 2.5rem;
 
-  --font-normal: 475;
+  --font-normal: 450;
   --font-medium: 550;
 
   --leading-tight: 1.3;
@@ -118,10 +118,22 @@ body {
   line-height: var(--leading-relaxed);
   -webkit-font-smoothing: antialiased;
   margin: auto 0 0;
-  padding: var(--space-l);
 }
 
 main {
+  display: block;
+  width: 100%;
+  padding: var(--space-l) 0;
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  background: var(--background);
+}
+
+.container {
   display: flex;
   flex-direction: column;
   gap: var(--space-l);

@@ -1,0 +1,197 @@
+.skipLink {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: var(--primary-color);
+    color: var(--background-color);
+    padding: var(--spacer-xsm) var(--spacer-sm);
+    z-index: 100;
+    transition: max-width 500ms ease-out, opacity 250ms ease-out;
+    text-decoration: none;
+    border-radius: 0 0 4px 0;
+}
+
+.skipLink:focus {
+    top: 0;
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+}
+
+.navwrapper {
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    translate: -50%;
+    z-index: 1001;
+    width: 100%;
+    background: linear-gradient(
+        to bottom,
+        rgba(10, 8, 8, 0) 0%,
+        rgba(10, 8, 8, 0.2) 40%,
+        rgba(10, 8, 8, 0.5) 70%,
+        var(--background-color-dark) 100%
+    );
+    height: 240px;
+    pointer-events: none;
+}
+
+.navbar {
+    display: flex;  
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+    width: auto;
+    min-width: max-content;
+    gap: var(--spacer-xxsm);
+    padding: var(--spacer-xxsm);
+    background-color: var(--surface-color);
+    position: fixed;
+    bottom: var(--spacer-md);
+    left: 50%;
+    translate: -50%;
+    z-index: 1001;
+    border-radius: 12px;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid var(--border-color-dark);
+    pointer-events: auto;
+}
+
+@media screen and (max-width: 600px) {
+    .navbar {
+        bottom: var(--spacer-sm);
+    }
+}
+
+.socialLinks {
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: var(--spacer-xxsm);
+    border-left: 1px solid var(--border-color-dark);
+    padding: 0 var(--spacer-xsm) 0 var(--spacer-sm);
+}
+
+.socialLink {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    color: var(--secondary-text-color);
+    transition: max-width 50ms ease-out, opacity 50ms ease-out;
+    position: relative;
+    padding: 0 var(--spacer-xxsm);
+    overflow: hidden;
+    text-decoration: none;
+}
+
+.socialLink:hover, 
+.socialLink:focus {
+    color: var(--color-accent-hover);
+    text-decoration: none;
+    outline: none;
+}
+
+.socialLink::after {
+    display: none;
+}
+
+.socialLink .tooltip {
+    display: inline-block;
+    color: var(--primary-text-color);
+    white-space: nowrap;
+    max-width: 0;
+    opacity: 0;
+    overflow: hidden;
+    margin-left: var(--spacer-xsm);
+    transition: max-width 400ms ease-out, opacity 250ms ease-out;
+}
+
+/* Only show tooltips on devices that support hovering */
+@media (hover: hover) {
+    .socialLink:hover .tooltip {
+        max-width: 100px;
+        opacity: 1;
+        color: var(--color-accent-hover);
+    }
+}
+
+/* Hide tooltips completely on touch-only devices */
+@media (hover: none) {
+    .socialLink .tooltip {
+        display: none;
+    }
+}
+
+.socialLink:focus-visible {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+}
+
+.srOnly {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+.navitem {
+    padding: var(--spacer-xsm) var(--spacer-sm);
+    border-radius: 9px;
+    transition: background-color 150ms ease-out, color 150ms ease-out;
+    white-space: nowrap;
+    text-decoration: none;
+    scale: 1;
+    transform: scale 150ms ease-out;
+}
+
+.navitem:hover {
+    text-decoration: none;
+    color: var(--color-accent-hover);
+    transition: background-color 150ms ease-out, color 150ms ease-out;
+}
+
+.navitem:active {
+    scale: 0.97;
+    transition: scale 150ms ease-out;
+}
+
+.navitem.active {
+    background-color: var(--color-accent);
+    color: var(--background-color-dark);
+    transition: background-color 150ms ease-out, color 150ms ease-out;
+}
+
+.navitem::after {
+    display: none;
+}
+
+.skipLink {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+.skipLink:focus {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    z-index: 100;
+}

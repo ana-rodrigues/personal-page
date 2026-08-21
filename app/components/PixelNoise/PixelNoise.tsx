@@ -5,10 +5,9 @@ import { Canvas, useFrame, useThree } from '@react-three/fiber';
 import type { BufferAttribute as BufferAttributeType } from 'three';
 import { createNoise3D } from 'simplex-noise';
 import styles from './PixelNoise.module.css';
-import CardStack from '../CardStack/CardStack';
 
-const SPACING = 0.2;
-const POINT_SIZE = 0.40;
+const SPACING = 0.6;
+const POINT_SIZE = 0.8;
 const MAX_POINTS = 60_000;
 const NOISE_TIME_SPEED = 0.1;
 const RECOLOR_STRIDE = 1;
@@ -198,7 +197,6 @@ export default function PixelNoise() {
   return (
     <>
       <div className={styles.root}>
-        <div>
         {!reducedMotion && (
           <Canvas
             className={styles.canvas}
@@ -212,7 +210,6 @@ export default function PixelNoise() {
           </Canvas>
         )}
       </div>
-    </div>
     </>
   );
 }

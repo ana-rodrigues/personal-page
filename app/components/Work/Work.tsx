@@ -47,7 +47,7 @@ export default function Work() {
 
             <div className={`${styles.description}${isOpen ? ` ${styles.descriptionOpen}` : ''}`}>
               <div className={styles.descriptionBody}>
-                <Text as="p" typography="body" color="primary" className={styles.descriptionText}>
+                <Text as="p" typography="body" color="secondary" className={styles.descriptionText}>
                   {project.description.split('\n').map((line, i) => (
                     <span key={i}>{line}</span>
                   ))}

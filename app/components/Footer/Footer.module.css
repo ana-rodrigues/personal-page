@@ -1,20 +1,76 @@
 .root {
   position: relative;
+  isolation: isolate;
   width: 100%;
-  overflow: hidden;
-  margin-top: var(--space-xl);
+  overflow-x: clip;
 }
 
-.canvas canvas {
-  display: block;
-  image-rendering: pixelated;
-  height: 40svh;
+.revealFooter {
+  position: sticky;
+  bottom: 0;
+  z-index: -1;
+  width: 100%;
+  overflow-x: clip;
 }
 
-.prefooter {
-  height: 40vh;
-  background: var(--gray-200);
+.footerFade {
+  width: 100%;
+  background: var(--gray-100);
+  color: var(--gray-900);
+}
+
+.footerScale {
+  width: 100%;
+}
+
+.footerInner {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: var(--container-narrow);
+  margin: 0 auto;
+  padding: var(--space-xl);
   display: flex;
-  justify-content: center;
-  align-items: flex-end;
+  flex-direction: column;
+  justify-content: space-around;
+  gap: var(--space-l);
+}
+
+.timeRow {
+  display: flex;
+  align-items: center;
+  gap: var(--space-s);
+}
+
+.timeIcon {
+  width: 16px;
+  height: 16px;
+}
+
+.credits :global(a) {
+  text-decoration: none;
+}
+
+.credits :global(a):hover {
+  color: var(--gray-400);
+}
+
+.links {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-m);
+}
+
+.linkRow {
+  display: flex;
+  align-items: center;
+  gap: var(--space-m);
+  text-decoration: none;
+}
+
+.linkRow:hover {
+  color: var(--gray-400);
+}
+
+.bracket {
+  letter-spacing: -0.06px;
 }

@@ -69,7 +69,7 @@ export default function ProjectsList({ posts }: ProjectsListProps) {
                   </ScrambleText>
                 </Text>
               </span>
-              <Text as="span" typography="body" color="primary" className={styles.itemSummary}>
+              <Text as="span" typography="body" color="secondary" className={styles.itemSummary}>
                 {post.summary}
               </Text>
             </span>
